@@ -1,0 +1,101 @@
+/* Estilos gerais */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #fdfaf6;
+    color: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container-geral {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    padding: 20px;
+}
+
+h1 {
+    color: #5d4037;
+}
+
+/* --- A MÁGICA DA SOBREPOSIÇÃO --- */
+
+/* 1. O container que "segura" tudo */
+.mapa-container {
+    position: relative; /* Essencial para a sobreposição */
+    width: 100%;
+    max-width: 800px; /* Ajuste para o tamanho da sua imagem */
+    margin: 20px auto;
+    border: 1px solid #eee;
+}
+
+/* 2. A imagem de fundo */
+.mapa-container img {
+    display: block; /* Remove espaço extra abaixo da imagem */
+    width: 100%;
+    height: auto;
+}
+
+/* 3. O SVG de sobreposição */
+.mapa-container .mapa-overlay {
+    position: absolute; /* Coloca o SVG por cima da imagem */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* --- ESTILO DAS ÁREAS CLICÁVEIS --- */
+
+/* VERSÃO FINAL (INVISÍVEL) */
+.parte-corpo {
+    fill: rgba(255, 255, 255, 0); /* Totalmente transparente */
+    stroke: none;                 /* Sem borda */
+    
+    cursor: pointer;
+    transition: fill 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.parte-corpo:hover {
+    fill: rgba(255, 255, 255, 0.3); /* Destaque branco */
+    stroke: #ffffff;
+}
+
+/* Estilo especial para o coração (mais discreto) */
+#coracao {
+    fill: rgba(255, 0, 0, 0.05); /* Vermelho muito, muito claro e quase transparente */
+    stroke: rgba(255, 0, 0, 0.1); /* Borda vermelha muito clara */
+    stroke-width: 1; /* Borda bem fina */
+    transition: fill 0.3s ease, stroke 0.3s ease, transform 0.3s ease;
+}
+
+#coracao:hover {
+    fill: rgba(255, 0, 0, 0.2); /* Fica um pouco mais visível ao passar o mouse */
+    stroke: rgba(255, 0, 0, 0.5); /* Borda mais forte */
+    transform: scale(1.03); /* Leve efeito de "pulsar" */
+    transform-origin: center;
+}
+
+
+/* Caixa de Informação */
+#info-box {
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    box-sizing: border-box;
+}
+/* ... (resto dos estilos da info-box) ... */

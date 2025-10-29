@@ -1,0 +1,56 @@
+/* Reseta e define o fundo */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Impede barras de rolagem */
+    background: #fff5f8; /* Um rosa bem clarinho */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Container do texto */
+.container-texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 450px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    color: #444;
+    z-index: 10; /* Garante que o texto fique ACIMA da vaquinha */
+}
+
+.container-texto h2 {
+    color: #d81b60; /* Coração/Rosa escuro */
+    margin-top: 0;
+}
+
+.container-texto p {
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+/* --- A VAQUINHA ANIMADA (CSS AJUSTADO) --- */
+
+#vaquinha-container {
+    position: absolute;
+    width: 150px; /* Um pouco maior para mais impacto, ajuste se quiser */
+    height: auto; /* Mantém a proporção da imagem */
+    z-index: 5; /* Atrás do texto */
+    
+    /* A MÁGICA DA ANIMAÇÃO! */
+    transition: transform 7s ease-in-out, filter 0.5s ease-out; /* Transição mais longa para o "andar" e filtro */
+    filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.1)); /* Sombrinha fofa */
+}
+
+#vaquinha-container img {
+    width: 100%;
+    height: auto;
+    display: block; /* Remove espaçamento indesejado */
+}
